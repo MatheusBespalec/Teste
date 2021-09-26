@@ -57,8 +57,8 @@
 				<td>Quantidade</td>
 				<td>Preço de Venda(unid)</td>
 				<td>Custo(unid)</td>
-				<td>Lucro Liquido</td>
 				<td>Lucro Bruto</td>
+				<td>Lucro Liquido</td>
 			</tr>
 			<?php foreach ($pedido as $key => $value) { 
 				
