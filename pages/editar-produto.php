@@ -85,7 +85,7 @@
 				$query = 'WHERE item_id = '.$id.' AND data BETWEEN \''.$data2.'\' AND \''.$data1.'\'';
 				$quantPedido = count(Painel::selectAll('tb_admin.pedidos',$query,[]));
 				$pedidos = count(Painel::selectAll('tb_admin.pedidos','GROUP BY id',[]));
-				$porcPedidos = (100*$quantPedido)/$pedidos;
+				$porcPedidos = ($pedidos == 0) ? 0 : (100*$quantPedido)/$pedidos;
 
 			?>
 			<p><?php echo number_format($porcPedidos, 2, ',', ''); ?>%</p>

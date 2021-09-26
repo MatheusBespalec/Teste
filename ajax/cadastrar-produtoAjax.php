@@ -11,7 +11,7 @@
 			$preco = str_replace(',','.',$_POST['preco']);
 			$custo = str_replace(',','.',$_POST['custo']);
 
-			Painel::insert('tb_admin.itens',[null,$_POST['nome'],$preco,$custo]);
+			Painel::insert('tb_admin.itens',[null,$_POST['nome'],$preco,$custo,'0']);
 
 			$data['type'] = 'success';
 			$data['txt']  = 'Produto '.$_POST['nome'].' cadastrado com sucesso!';

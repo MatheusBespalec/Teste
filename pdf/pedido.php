@@ -30,7 +30,6 @@
 			$cliente      = Painel::getElement('tb_admin.clientes','id = ?',[$pedido[0]['cliente_id']],'nome');
 			$pago         = $pedido[0]['pago'];
 			$saida        = $pedido[0]['saida'];
-			$cardapioId   = $pedido[0]['cardapio_id'];
 			$endereco     = $pedido[0]['endereco'];
 			$status       = $pedido[0]['status'];
 			$totalBruto   = Painel::totalArr($pedido,'lucro_bruto');
@@ -63,7 +62,6 @@
 		</table>
 	</div><!--wraper-table-->
 	<p><b>Nome do Cliente:</b>     <?php echo $cliente; ?></p>
-	<p><b>Cardapio do Pedido:</b>   <?php echo Painel::getElement('tb_admin.cardapio','id = ?',[$cardapioId],'nome');?></p>
 	<p><b>Endereço de Entrega:</b> <?php echo $saida == 'Retira' ? 'Cliente Retira' : $endereco; ?>
 	<p><b>Data de Emissão:</b>     <?php echo $data; ?></p>
 	<br>

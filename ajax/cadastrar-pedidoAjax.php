@@ -47,7 +47,6 @@
 		$date       = date("Y/m/d"); 
 		$pago       = 1;
 		$clienteId  = $_POST['clienteId'];
-		$cardapioId = $_POST['cardapioId'];
 
 		//Produtos
 		$itemId     = $_POST['itemId'];
@@ -69,12 +68,12 @@
 				$saida    = 'Retira';
 				$endereco = '';
 
-				Painel::insert('tb_admin.pedidos',[null,$pedido,$date,$clienteId,$item_id,$quantidade,$preco_venda,$custo,$lucroBruto,$lucroLiq,$status,$pago,$saida,$endereco,$cardapioId]);
+				Painel::insert('tb_admin.pedidos',[null,$pedido,$date,$clienteId,$item_id,$quantidade,$preco_venda,$custo,$lucroBruto,$lucroLiq,$status,$pago,$saida,$endereco]);
 			}else{
 				$saida    = 'Entrega';
 				$endereco = $_POST['endereco'];
 
-				Painel::insert('tb_admin.pedidos',[null,$pedido,$date,$clienteId,$item_id,$quantidade,$preco_venda,$custo,$lucroBruto,$lucroLiq,$status,$pago,$saida,$endereco,$cardapioId]);
+				Painel::insert('tb_admin.pedidos',[null,$pedido,$date,$clienteId,$item_id,$quantidade,$preco_venda,$custo,$lucroBruto,$lucroLiq,$status,$pago,$saida,$endereco]);
 			}
 			
 		}

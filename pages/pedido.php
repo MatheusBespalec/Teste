@@ -79,8 +79,8 @@
 				<td></td>
 				<td></td>
 				<td style="background-color: #ccc;">Total:</td>
-				<td style="background-color: #ccc;">R$ <?php echo number_format( $totalLiquido, 2, ',', ' ' ); ?></td>
 				<td style="background-color: #ccc;">R$ <?php echo number_format( $totalBruto, 2, ',', ' ' ); ?></td>
+				<td style="background-color: #ccc;">R$ <?php echo number_format( $totalLiquido, 2, ',', ' ' ); ?></td>
 		</table>
 	</div><!--wraper-table-->
 	<p><b>Nome do Cliente:</b>     <?php echo $cliente; ?></p>

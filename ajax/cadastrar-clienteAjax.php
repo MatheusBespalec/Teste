@@ -8,7 +8,7 @@
 				
 				die(json_encode($data));
 			}else{
-				Painel::insert('tb_admin.clientes',[null,$_POST['nome'],$_POST['telefone'],$_POST['endereco']]);
+				Painel::insert('tb_admin.clientes',[null,$_POST['nome'],$_POST['telefone'],$_POST['endereco'],'0']);
 
 				$data['type'] = 'success';
 				$data['txt']  = 'Cliente '.$_POST['nome'].' cadastrado com sucesso';

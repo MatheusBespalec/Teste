@@ -3,17 +3,13 @@
 	if(!isset($_SESSION['login']) || $_SESSION['login'] == false)
 		header('Location: pages/permissao-negada.php');
 
-	$cardapio = Painel::selectAll('tb_admin.cardapio','WHERE atual = ?',['Sim']);
+	$produtos = Painel::selectAll('tb_admin.itens','',[]);
 ?>
 <div class="box-content">
 
 	<h2><i class="far fa-plus-square"></i> Cadastrar Pedido</h2>
 	
 	<form method="post" class="pedido">
-		<h3>Cardápio Atual: <?php echo $cardapio[0]['nome']; ?></h3>
-		<cardapio id="<?php echo $cardapio[0]['id']; ?>"/>
-		<br>
-		
 		<label>Cliente:</label>
 		<div class="form-group">
 			<input type="text" id="cliente" name="cliente" placeholder="ID ou Nome do Cliente..." required>
@@ -25,11 +21,11 @@
 		<div class="form-group">
 			<select id="item_id" name="item">
 				<option value="Selecione um item" >Selecione um item</option>,
-				<?php foreach ($cardapio as $key => $value) { ?>
+				<?php foreach ($produtos as $key => $value) { ?>
 					<option 
-						value="<?php echo $value['item_id']; ?>" 
-						nome="<?php echo Painel::getElement('tb_admin.itens','id = ?',[$value['item_id']],'nome'); ?>">
-						<?php echo $value['item_id'].' - '.Painel::getElement('tb_admin.itens','id = ?',[$value['item_id']],'nome'); ?>
+						value="<?php echo $value['id']; ?>" 
+						nome="<?php echo $value['nome']; ?>">
+						<?php echo $value['id'].' - '.$value['nome']; ?>
 					</option>
 				<?php } ?>
 			</select>

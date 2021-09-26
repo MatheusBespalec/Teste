@@ -167,7 +167,6 @@ $(function(){
 	$('input[type=submit]').click(function(){
 		//Parametros
 		var final      = true;
-		var cardapioId = $('cardapio').attr('id');
 		var retira     = $('#retira').val();
 		var endereco   = $('#endereco').val();
 		var cliente    = $('#cliente').val();
@@ -193,7 +192,7 @@ $(function(){
 						url: include_path+'ajax/cadastrar-pedidoAjax.php',
 						type: 'POST', 
 						dataType: 'json', 
-						data: {final,clienteId,retira,itemId,quant,precoVenda,cardapioId},
+						data: {final,clienteId,retira,itemId,quant,precoVenda},
 					}).always(function(){
 						$('.overlay').css('display','block');
 					});
@@ -203,7 +202,7 @@ $(function(){
 						url: include_path+'ajax/cadastrar-pedidoAjax.php',
 						type: 'POST', 
 						dataType: 'json', 
-						data: {final,clienteId,retira,endereco,itemId,quant,precoVenda,cardapioId},
+						data: {final,clienteId,retira,endereco,itemId,quant,precoVenda},
 					}).always(function(){
 						$('.overlay').css('display','block');
 					});

@@ -1,7 +1,5 @@
 <?php 
 
-	include('config.php');
-
 	$url = explode('/', $_GET['url'])[1];
 
 	ob_start();
